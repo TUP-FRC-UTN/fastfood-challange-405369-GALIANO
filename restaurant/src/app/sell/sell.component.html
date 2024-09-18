@@ -1,0 +1,28 @@
+
+<div class = "container-fluid justify-content-center mt-4">
+    <div>
+        <h1>PEDIDOS</h1>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form #form = "ngForm" >
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input #nombre = "ngModel" 
+                  [ngClass]="{'is-invalid': nombre.invalid &&(nombre.touched || nombre.dirty), 'is-valid': nombre.valid}"
+                  class="form-control" type="text" name="nombre" 
+                  [(ngModel)]="nom" required minlength="3">
+                </div>
+                <div class="mb-3">
+                  <label for="pedido" class="form-label">Pedido</label>
+                  <input #pedido = "ngModel"
+                  [ngClass]="{'is-invalid': pedido.invalid &&(pedido.touched || pedido.dirty), 'is-valid': pedido.valid}"
+                  [(ngModel)]="ped" required minlength="3"
+                  class="form-control" type="text" name="pedido">
+                </div>
+                <button type="button" class="btn btn-primary" (click)="sendOrder(form)">Ordenar</button>
+              </form>
+        </div>
+      </div>
+</div>
+
