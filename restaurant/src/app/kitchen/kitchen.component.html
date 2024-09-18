@@ -6,7 +6,7 @@
         <div class="card-body">
             <form #form = "ngForm" >
                 <div class="mb-3">
-                    <h4>Pedidos Pendientes</h4>
+                    <h4><b>Pedidos Pendientes</b></h4>
                     <div class = "container-flex">
                         @for(pedido of listaPedidos; track pedido){
                             @if(pedido.state == estados.PENDIENTE){   
@@ -17,7 +17,7 @@
                             }
                         }                     
                     </div>
-                    <h4>Pedidos en Proceso</h4>
+                    <h4 class="mt-4"><b>Pedidos en Proceso</b></h4>
                     <div class = "container-flex">
                         @for(pedido of listaPedidos; track pedido){
                             @if(pedido.state == estados.COCINANDO){   
